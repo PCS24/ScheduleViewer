@@ -10,7 +10,7 @@
                 background-color: #1c4587ff;
             }
 
-            body, p, h1, h2, h3, h4, h5, h6, span, a, div, input {
+            body, p, h1, h2, h3, h4, h5, h6, span, div, input {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 30px;
             }
@@ -19,7 +19,7 @@
                 color: white;
             }
 
-            a{
+            a#drag {
                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 color: gold;
             }
@@ -64,7 +64,8 @@
             <li>Enter your student ID</li>
             <li>Your schedule will appear!</li>
         </ol>
-        <i>Thanks to @CleanCow101 for discovering the API url!</i>
+        <i>Thanks to @CleanCow101 for discovering the API url!</i><br>
+        <i>Join our <a href="https://discord.gg/MPhEM6Y">Discord</a> if you're in '23-'25</i>
         <script>
             let elt = document.getElementById('drag');
             fetch("https://raw.githubusercontent.com/PCS24/ScheduleViewer/main/bookmark.js").then((res)=>res.text()).then((res)=>drag.setAttribute('href', res));
