@@ -30,7 +30,7 @@
 
             body, p, h1, h2, h3, h4, h5, h6, span, div, input {
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 30px;
+                
             }
 
             body, p, h1, h2, h3, h4, h5, h6, div {
@@ -42,49 +42,52 @@
                 color: gold;
             }
 
-            .center:hover {
-                background-color: #1c4587ff;
-                
-            }
-
-            span#operator-role {
-                color: rgb(76, 207, 142);
-                background-color: rgba(76, 207, 142, 0.1);
-            }
-
-            span#operator-role:hover {
-                background-color: rgba(76, 207, 142, 0.3);
-            }
-
-            i {
+            .note {
                 font-size: 15px;
             }
 
-            .center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-                background-color: #1c4587c2;
-                min-height: 50px;
-                text-align: center;
-                color: gold;
+            .instructions {
+                font-size: 30px;
             }
 
         </style>
     </head>
     <body>
         <h1>PCS Genesis Schedule Viewer</h1>
-        <ol>
-            <li><a href="" id="drag">Drag this link into your bookmarks bar!</a></li>
-            <li>Sign in to Genesis</li>
+        <i class="note">Doesn't work on mobile, for now!</i><br>
+        <ol class="instructions">
+            <li><a href="" id="drag" name="Schedule">Drag this link into your bookmarks bar!</a></li>
+            <li>Sign in to Genesis in a parent account</li>
             <li>Click the bookmark</li>
             <li>Enter your student ID</li>
             <li>Your schedule will appear!</li>
         </ol>
-        <i>Thanks to @CleanCow101 for discovering the API url!</i><br>
-        <i>Join our <a href="https://discord.gg/MPhEM6Y">Discord</a> if you're in '23-'25</i><br>
-        <i>Doesn't work on mobile, for now!</i>
+        <i class="note">Join our <a href="https://discord.gg/MPhEM6Y">Discord</a> if you're in '23-'25</i><br><br>
+        <p>
+            <b>Not working?</b> Make sure you followed the steps correctly.
+            <ul>
+                <li>Doublecheck that you dragged the yellow link into your bookmarks bar, <i>not</i> the link to this page.</li>
+                <li>Verify that you are logged in to a parent account, not a student account.</li>
+                <li>Some districts have discovered and disabled the method we use to get schedules. Check with your friends to see if it's still working in your district.</li>
+            </ul><br>
+            <details>
+                <summary>
+                    <b>More Details</b> (Click to expand)
+                </summary>
+                <p>
+                    <br>
+                    This program may show you a schedule that is unfinalized, incomplete, or incorrect.<br>
+                    It may change by the time your district officially releases class schedules. <br>
+                    <br>
+                    The URL this program uses to fetch data is accessible to anyone signed into Genesis. <br>
+                    The program <b>does not</b> gain unauthorized access to any internal parts of your district's Genesis system. <br>
+                    It is not dangerous in any way. <br>
+                    <br>
+                    That being said, your use of this program is your decision. Please be mindful of any potential consequences.<br>
+                    The developers and contributors of this program will not be held responsible for the results of your use of it.
+                </p>
+            </details>
+        </p>
         <script>
             let elt = document.getElementById('drag');
             fetch("https://raw.githubusercontent.com/PCS24/ScheduleViewer/main/bookmark.js").then((res)=>res.text()).then((res)=>drag.setAttribute('href', res));
